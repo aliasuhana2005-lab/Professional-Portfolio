@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Shaik Alia Suhana | AI & ML Portfolio</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fc;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* header / hero section */
+        .hero {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1b4f6e 100%);
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            color: white;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+            transition: all 0.2s;
+        }
+
+        .hero-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .hero-info h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-info .tagline {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-info .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .contact-links a {
+            color: white;
+            background: rgba(255,255,255,0.12);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(2px);
+        }
+
+        .contact-links a:hover {
+            background: #2c7da0;
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.8rem;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .hero-stats .stat {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .hero-stats p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* layout grids */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.25s ease;
+            border: 1px solid #e9edf2;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+            border-color: #cbdde6;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 5px solid #1b6b8f;
+            padding-left: 1rem;
+            color: #0f2b3d;
+        }
+
+        .section-title i {
+            color: #1b6b8f;
+            font-size: 1.5rem;
+        }
+
+        /* education & skill chips */
+        .edu-item {
+            margin-bottom: 1.4rem;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 0.8rem;
+        }
+
+        .edu-item:last-child {
+            border: none;
+        }
+
+        .edu-title {
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .edu-meta {
+            font-size: 0.85rem;
+            color: #4a627a;
+            margin-top: 5px;
+        }
+
+        .skill-cluster {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #eef2f7;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1f5068;
+        }
+
+        .skill-tag i {
+            margin-right: 6px;
+            font-size: 0.75rem;
+        }
+
+        /* project cards */
+        .project-item {
+            background: #fafcff;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            margin-bottom: 1.4rem;
+            border-left: 4px solid #2c7da0;
+            transition: 0.1s;
+        }
+
+        .project-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-title a {
+            color: #1b6b8f;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: #eef2fa;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+
+        .project-title a:hover {
+            background: #1b6b8f;
+            color: white;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            color: #2c3e4e;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .tech-stack span {
+            background: #e2eaf1;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .cert-badge {
+            background: #f0f4f9;
+            border-radius: 60px;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        hr {
+            margin: 0.8rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #cbdde6, transparent);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1rem;
+            font-size: 0.8rem;
+            color: #5b7a97;
+        }
+
+        @media (max-width: 780px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .hero-flex {
+                flex-direction: column;
+                align-items: start;
+            }
+            .hero-stats {
+                width: 100%;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .hero-stats .stat {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-flex">
+            <div class="hero-info">
+                <h1>Shaik Alia Suhana</h1>
+                <div class="tagline">
+                    <span>AI & Machine Learning Undergraduate</span>
+                    <span class="badge"><i class="fas fa-brain"></i> Data driven</span>
+                    <span class="badge"><i class="fas fa-code"></i> Python · ML</span>
+                </div>
+                <p style="margin-top: 0.6rem; max-width: 550px; opacity: 0.9;">
+                    Passionate about leveraging data-driven techniques to solve real-world problems.
+                    Strong foundation in Python, analytics, and predictive modeling.
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com/aliasuhana2005-lab" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/alia-suhana-sas051226/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="mailto:alia.suhana@example.com"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">8.21 <span style="font-size:1rem">CGPA</span></div>
+                <p>B.Tech AIML · 2027</p>
+                <hr style="background: rgba(255,255,255,0.2); margin: 0.6rem 0;">
+                <div><i class="fas fa-project-diagram"></i> 2+ Projects</div>
+                <div><i class="fas fa-certificate"></i> 4 Certifications</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2-column layout: left: Education + Skills, right: Summary + Certs quick -->
+    <div class="grid-2col">
+        <!-- Left Column: Education + Technical Skills -->
+        <div>
+            <!-- Education Card -->
+            <div class="card">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">
+                        <span>B.Tech - Artificial Intelligence & Machine Learning</span>
+                        <span style="font-weight:600">2023 – 2027</span>
+                    </div>
+                    <div class="edu-meta">St. Ann's College of Engineering and Technology · CGPA: 8.21</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">
+                        <span>Intermediate (MPC)</span>
+                        <span>2022 – 2023</span>
+                    </div>
+                    <div class="edu-meta">Surya Junior College · Marks: 928</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">
+                        <span>SSC</span>
+                        <span>2021</span>
+                    </div>
+                    <div class="edu-meta">Adarsa High School · Marks: 600</div>
+                </div>
+            </div>
+
+            <!-- Technical Skills Card -->
+            <div class="card">
+                <div class="section-title">
+                    <i class="fas fa-cogs"></i> Tech Arsenal
+                </div>
+                <div>
+                    <div style="font-weight: 700; margin: 0.8rem 0 0.2rem 0;"><i class="fab fa-python"></i> Languages & Core</div>
+                    <div class="skill-cluster">
+                        <span class="skill-tag">Python (Advanced)</span>
+                        <span class="skill-tag">Java (Basics)</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-weight: 700; margin: 1rem 0 0.2rem 0;"><i class="fas fa-chart-line"></i> Data Science & ML</div>
+                    <div class="skill-cluster">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                    </div>
+                </div>
+                <div>
+                    <div style="font-weight: 700; margin: 1rem 0 0.2rem 0;"><i class="fas fa-tools"></i> Tools & Web</div>
+                    <div class="skill-cluster">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <span class="skill-tag"><i class="fas fa-database"></i> Data Analysis</span>
+                    <span class="skill-tag"><i class="fas fa-chart-simple"></i> EDA</span>
+                    <span class="skill-tag"><i class="fas fa-brain"></i> Problem Solving</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Professional Summary + Certifications (and extra info) -->
+        <div>
+            <!-- Summary Card -->
+            <div class="card">
+                <div class="section-title">
+                    <i class="fas fa-user-astronaut"></i> Professional Summary
+                </div>
+                <p style="line-height: 1.5; color: #1e3a4a;">
+                    Motivated Artificial Intelligence and Machine Learning undergraduate with a strong foundation in Python programming, 
+                    data analysis, and problem solving. Experienced in working with real-world datasets, performing data preprocessing, 
+                    exploratory data analysis, and building predictive models. Skilled in using tools such as Pandas, NumPy, Matplotlib, 
+                    and Scikit-learn. Passionate about leveraging data-driven techniques to solve real-world problems and continuously 
+                    improving technical expertise in AI and software development.
+                </p>
+            </div>
+
+            <!-- Certifications Card -->
+            <div class="card">
+                <div class="section-title">
+                    <i class="fas fa-award"></i> Certifications
+                </div>
+                <div class="cert-list">
+                    <div class="cert-badge"><i class="fab fa-python"></i> Joy of Computing using Python</div>
+                    <div class="cert-badge"><i class="fas fa-certificate"></i> Python Training - IIT Bombay</div>
+                    <div class="cert-badge"><i class="fab fa-java"></i> Java Training - IIT Bombay</div>
+                    <div class="cert-badge"><i class="fab fa-html5"></i> HTML Training - IIT Bombay</div>
+                </div>
+                <div style="margin-top: 1rem; font-size: 0.8rem; color: #386a7c;">
+                    <i class="far fa-calendar-alt"></i> NPTEL (Jan-Apr 2025) · Spoken Tutorial Project (2024-2025)
+                </div>
+            </div>
+
+            <!-- Highlight: Additional mini stats -->
+            <div class="card" style="background: linear-gradient(115deg, #fff, #f9fdfe);">
+                <div class="section-title" style="border-left-color: #48a0b0;">
+                    <i class="fas fa-chart-simple"></i> Core Strengths
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;">
+                    <div><i class="fas fa-chart-line" style="color:#2c7da0"></i> Data Preprocessing</div>
+                    <div><i class="fas fa-chart-bar" style="color:#2c7da0"></i> Exploratory Analysis</div>
+                    <div><i class="fas fa-microchip" style="color:#2c7da0"></i> Regression Models</div>
+                    <div><i class="fas fa-search" style="color:#2c7da0"></i> Feature Engineering</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section - Full width cards -->
+    <div style="margin-top: 1rem;">
+        <div class="card" style="padding: 1.5rem;">
+            <div class="section-title">
+                <i class="fas fa-laptop-code"></i> Featured Projects
+            </div>
+            
+            <!-- Project 1: Data Exploration and Visualization -->
+            <div class="project-item">
+                <div class="project-title">
+                    📊 Data Exploration and Visualization – Housing Analytics
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                </div>
+                <div class="project-desc">
+                    Analyzed a real-world housing dataset to extract pricing trends and feature correlations. Performed data cleaning, 
+                    preprocessing, and EDA using Pandas, NumPy, and visualization with Matplotlib & Seaborn. Derived actionable insights 
+                    supporting data-driven decision making.
+                </div>
+                <div class="tech-stack">
+                    <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>EDA</span>
+                </div>
+            </div>
+
+            <!-- Project 2: Employee Productivity Prediction -->
+            <div class="project-item">
+                <div class="project-title">
+                    🧠 Employee Productivity Prediction – ML Regression
+                    <a href="https://github.com/aliasuhana2005-lab/Employee-productivity-prediction" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                </div>
+                <div class="project-desc">
+                    Developed an end-to-end ML model to predict employee productivity using historical workplace data. Applied feature engineering, 
+                    missing value handling, and regression algorithms via Scikit-learn. Optimized model performance with metrics evaluation, 
+                    achieving significant accuracy improvement.
+                </div>
+                <div class="tech-stack">
+                    <span>Scikit-learn</span><span>Regression</span><span>Feature Engineering</span><span>Pandas</span><span>Model Tuning</span>
+                </div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.85rem; background: #eef3fa; border-radius: 1rem; padding: 0.5rem 1rem;">
+                <i class="fas fa-github-alt"></i> More projects & contributions: 
+                <a href="https://github.com/aliasuhana2005-lab" target="_blank" style="color:#1f6e8c; font-weight:500;">github.com/aliasuhana2005-lab</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional: Data Analysis & AI interests -->
+    <div class="grid-2col" style="margin-top: 1rem;">
+        <div class="card">
+            <div class="section-title">
+                <i class="fas fa-chalkboard-user"></i> Workshops & Achievements
+            </div>
+            <ul style="margin-left: 1.2rem; color: #2c4e62;">
+                <li>NPTEL: Joy of Computing using Python (Elite certificate)</li>
+                <li>Python & Java training certified by IIT Bombay Spoken Tutorial</li>
+                <li>Hands-on experience with real-world datasets and predictive modeling</li>
+                <li>Active contributor to open-source ML projects (GitHub)</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="section-title">
+                <i class="fas fa-chart-line"></i> Tools & Workflow
+            </div>
+            <p style="margin-bottom: 0.8rem;">Proficient in the complete data science pipeline: data acquisition → cleaning → EDA → modeling → evaluation.</p>
+            <div class="skill-cluster">
+                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git Flow</span>
+                <span class="skill-tag"><i class="fas fa-chart-pie"></i> Statistical Analysis</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> SQL queries</span>
+                <span class="skill-tag"><i class="fas fa-chart-line"></i> Regression / Classification</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <i class="far fa-copyright"></i> 2025 Shaik Alia Suhana — AI & ML Portfolio. Built with passion for data science.
+        <div style="margin-top: 6px;"><i class="fas fa-map-marker-alt"></i> India · Open to internships & collaborations</div>
+    </footer>
+</div>
+</body>
+</html>
